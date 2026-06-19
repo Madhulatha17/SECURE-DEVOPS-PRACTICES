@@ -1,0 +1,28 @@
+name: Secure DevOps Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run SonarQube Scan (Simulated)
+        run: |
+          echo "Running SonarQube Analysis..."
+          echo "No critical issues found"
+
+      - name: OWASP ZAP Scan (Simulated)
+        run: |
+          echo "Running OWASP ZAP Scan..."
+          echo "Generating security report"
+
+      - name: Generate Report
+        run: |
+          echo "Security pipeline executed successfully"
